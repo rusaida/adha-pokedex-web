@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>Pokedex</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/528/528101.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav id="navbar_top" class="navbar navbar-expand-sm navbar-dark bg-danger">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="https://cdn-icons-png.flaticon.com/512/528/528101.png" alt="" width="32" height="32" class="d-inline-block align-text-top" />
+          Adha Pokedex
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="spinner_loading" class="spinner-border text-light" style="width: 2.5rem; height: 2.5rem" role="status">
+          <span class="visually-hidden">Menunggu...</span>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <form class="d-flex">
+            <div class="input-group">
+              <input class="form-control mr-sm-2" autocomplete="off" type="search" placeholder="Search by Name" aria-label="Search" id="search" />
+              <button class="btn btn-outline-light" onclick="clearsearchPokemon()" type="button">Cancel</button>
+              <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Type</button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('grass')"><img src="sprites/glass.webp" class="sprite" alt="Grass" /> Grass</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('poison')"><img src="sprites/poison.webp" class="sprite" alt="Poison" /> Poison</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('fire')"><img src="sprites/fire.webp" class="sprite" alt="Fire" /> Fire</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('electric')"><img src="sprites/electric.webp" class="sprite" alt="Electric" /> Electric</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('water')"><img src="sprites/water.webp" class="sprite" alt="Water" /> Water</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('ground')"><img src="sprites/ground.webp" class="sprite" alt="Ground" /> Ground</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('rock')"><img src="sprites/rock.webp" class="sprite" alt="Rock" /> Rock</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('fairy')"><img src="sprites/fairy.webp" class="sprite" alt="Fairy" /> Fairy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('bug')"><img src="sprites/bug.webp" class="sprite" alt="Bug" /> Bug</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('dragon')"><img src="sprites/dragon.webp" class="sprite" alt="Dragon" /> Dragon</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('psychic')"><img src="sprites/psychic.webp" class="sprite" alt="Psychic" /> Psychic</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('flying')"><img src="sprites/flying.webp" class="sprite" alt="Flying" /> Flying</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('fighting')"><img src="sprites/fighting.webp" class="sprite" alt="Fighting" /> Fighting</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('ghost')"><img src="sprites/ghost.webp" class="sprite" alt="Ghost" /> Ghost</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('ice')"><img src="sprites/ice.webp" class="sprite" alt="Ice" /> Ice</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('steel')"><img src="sprites/steel.webp" class="sprite" alt="Steel" /> Steel</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="searchPokemonByType('normal')"><img src="sprites/normal.webp" class="sprite" alt="Normal" /> Normal</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" onclick="searchPokemonbyName()">All</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div id="pokemon_container" class="pokemon-container"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
